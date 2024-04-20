@@ -1,0 +1,70 @@
+meta:
+  engine: 4.0.5
+  name: test
+  version: 0.1
+  ref: "test"
+  author: nxtk
+  url: test
+
+  footprints:
+    #template: &kicad_template "kicad5"
+    template: &kicad_template "kicad8_1"
+    key_switch: &fp_key_switch nxtk/switch_choc_v1_v2_plated
+
+units:
+  kx: 18 # spacing between key centers (X-axis)
+  ky: 17 # spacing between key centers (Y-axis)
+  kco: 13.8 # key cutout hole width (cherry, choc v2: 14, choc v1: 13.8)
+  kcy: ky - 0.5 # keycap height (cherry: 18, choc: 16.5, choc CFX 16.5)
+  kcx: kx - 0.5 # keycap width (cherry: 18, choc: 17.5, choc CFX 16.5)
+  kcx1_25: kx * 1.25 - 0.5
+
+points.zones:
+  main:
+    anchor:
+      shift: [100, -100] # Fix KiCad placement
+    columns:
+      middle:
+        key:
+          column_net: C3
+    rows:
+      home:
+        row_net: R1
+outlines:
+  pcb:
+    - what: rectangle
+      where: true
+      corner: 2
+      size: [20, 20]
+pcbs:
+  test:
+    outlines:
+      main:
+        outline: pcb
+        layer: Edge.Cuts
+    template: *kicad_template
+    params:
+      secret: 42
+    footprints:
+      key_switches:
+        what: *fp_key_switch
+        where: true
+        params:
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          side: "F"
+          hotswap: true
+          solder: false
+          plated: true
+          reversible: false
+          include_stabilizer_pad: true
+          choc_v2_support: true
+          outer_pad_width_front: 1.5
+          outer_pad_width_back: 1.5
+          show_corner_marks: true
+          show_keycaps: true
+          keycaps_x: kcx
+          keycaps_y: kcy
+        adjust:
+          rotate: 0
+

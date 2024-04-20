@@ -52,19 +52,28 @@ pcbs:
         params:
           from: "{{column_net}}"
           to: "{{colrow}}"
-          side: "F"
-          hotswap: true
-          solder: false
-          plated: true
-          reversible: false
-          include_stabilizer_pad: true
-          choc_v2_support: true
-          outer_pad_width_front: 1.5
-          outer_pad_width_back: 1.5
           show_corner_marks: true
           show_keycaps: true
           keycaps_x: kcx
           keycaps_y: kcy
+
+          #outer_pad_width_front: 1.3
+          #outer_pad_width_back: 1.3
+          side: "B"
+          solder: false
+          hotswap: true
+          reversible: true
+          choc_v1_support: true
+          choc_v2_support: true
+          include_stabilizer_pad: true
+          oval_stabilizer_pad: false
+
+          plated: true
+          choc_v1_stabilizers_diameter: 1.9 # 1.75
+          CENTERHOLE: GND
+          LEFTSTAB: "" # { type: 'net', value: 'D2' }
+          RIGHTSTAB: "" # { type: 'net', value: 'D1' }
+
         adjust:
           rotate: 0
 

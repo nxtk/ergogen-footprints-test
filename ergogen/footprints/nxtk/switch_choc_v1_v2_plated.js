@@ -138,9 +138,10 @@ module.exports = {
     
     plated: true,
     choc_v1_stabilizers_diameter: 1.9,
-    CENTERHOLE_NET: { type: 'net', value: 'GND' },
-    LEFTSTAB_NET: { type: 'net', value: 'D2' },
-    RIGHTSTAB_NET: { type: 'net', value: 'D1' },
+    
+    CENTERHOLE: { type: 'net', value: 'GND' },
+    LEFTSTAB: { type: 'net', value: 'D1' },
+    RIGHTSTAB: { type: 'net', value: "D2" },
     
   },
   body: p => {
@@ -157,7 +158,7 @@ module.exports = {
     (attr exclude_from_pos_files exclude_from_bom)
 
     ${''/* middle shaft hole */}
-    (pad "" ${p.plated ? 'thru_hole' : 'np_thru_hole'} circle (at 0 0 ${p.r}) (size ${p.plated ? p.choc_v2_support ? '5.3 5.3' : '3.7 3.7' : p.choc_v2_support ? '5 5' : '3.4 3.4'}) (drill ${p.choc_v2_support ? '5' : '3.4'}) (layers "*.Cu" "*.Mask") ${p.plated ? p.CENTERHOLE_NET : ''})
+    (pad "" ${p.plated ? 'thru_hole' : 'np_thru_hole'} circle (at 0 0 ${p.r}) (size ${p.plated ? p.choc_v2_support ? '5.3 5.3' : '3.7 3.7' : p.choc_v2_support ? '5 5' : '3.4 3.4'}) (drill ${p.choc_v2_support ? '5' : '3.4'}) (layers "*.Cu" "*.Mask") ${p.plated ? p.CENTERHOLE : ''})
     `
 
     const choc_v1_stabilizers = `
@@ -368,10 +369,10 @@ module.exports = {
     (pad "" thru_hole oval (at ${stab_offset_x_back}5 ${stab_offset_y}5.15 ${p.r}) (size 2.4 1.2) (drill oval 1.6 0.4) (layers "*.Cu" "*.Mask") ${p.solder && p.hotswap ? p.to.str : ''})
     `
     const round_corner_stab_front = `
-    (pad "" ${p.plated ? 'thru_hole' : 'np_thru_hole'} circle (at ${stab_offset_x_front}5.00 ${stab_offset_y}5.15 ${p.r}) (size ${p.plated ? '1.9 1.9' : '1.6 1.6'}) (drill 1.6) (layers "*.Cu" "*.Mask") ${p.solder && p.hotswap ? p.to.str : p.plated ? p.LEFTSTAB_NET : ''})
+    (pad "" ${p.plated ? 'thru_hole' : 'np_thru_hole'} circle (at ${stab_offset_x_front}5.00 ${stab_offset_y}5.15 ${p.r}) (size ${p.plated ? '1.9 1.9' : '1.6 1.6'}) (drill 1.6) (layers "*.Cu" "*.Mask") ${p.solder && p.hotswap ? p.to.str : p.plated ? p.LEFTSTAB : ''})
     `
     const round_corner_stab_back = `
-    (pad "" ${p.plated ? 'thru_hole' : 'np_thru_hole'} circle (at ${stab_offset_x_back}5.00 ${stab_offset_y}5.15 ${p.r}) (size ${p.plated ? '1.9 1.9' : '1.6 1.6'}) (drill 1.6) (layers "*.Cu" "*.Mask") ${p.solder && p.hotswap ? p.to.str : p.plated ? p.RIGHTSTAB_NET : ''})
+    (pad "" ${p.plated ? 'thru_hole' : 'np_thru_hole'} circle (at ${stab_offset_x_back}5.00 ${stab_offset_y}5.15 ${p.r}) (size ${p.plated ? '1.9 1.9' : '1.6 1.6'}) (drill 1.6) (layers "*.Cu" "*.Mask") ${p.solder && p.hotswap ? p.to.str : p.plated ? p.RIGHTSTAB : ''})
     `
     const switch_3dmodel = `
     (model ${p.switch_3dmodel_filename}

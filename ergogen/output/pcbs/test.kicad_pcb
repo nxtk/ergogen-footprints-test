@@ -135,24 +135,24 @@
 
   
     (footprint "ceoloide:switch_choc_v1_v2"
-      (layer "F.Cu")
+      (layer "B.Cu")
       (at 100 100 0)
       (property "Reference" "S1"
         (at 0 0 0)
-        (layer "F.SilkS")
+        (layer "B.SilkS")
         hide
-        (effects (font (size 1.27 1.27) (thickness 0.15)))
+        (effects (font (size 1 1) (thickness 0.15)))
       )
       (attr exclude_from_pos_files exclude_from_bom)
 
     
     
-    (pad "" np_thru_hole circle (at 0 0 0) (size 5 5) (drill 5) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 0 0) (size 5.3 5.3) (drill 5) (layers "*.Cu" "*.Mask") (net 3 "GND"))
     
     
     
-    (pad "" np_thru_hole circle (at 5.5 0 0) (size 1.9 1.9) (drill 1.9) (layers "*.Cu" "*.Mask"))
-    (pad "" np_thru_hole circle (at -5.5 0 0) (size 1.9 1.9) (drill 1.9) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 5.5 0 0) (size 2.1999999999999997 2.1999999999999997) (drill 1.9) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at -5.5 0 0) (size 2.1999999999999997 2.1999999999999997) (drill 1.9) (layers "*.Cu" "*.Mask"))
     
     
     
@@ -166,6 +166,16 @@
     (fp_line (start 7 -7) (end 7 -6) (layer "F.SilkS") (stroke (width 0.15) (type solid)))
     
     
+    (fp_line (start -7 -6) (end -7 -7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start -7 7) (end -6 7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start -6 -7) (end -7 -7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start -7 7) (end -7 6) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 7 6) (end 7 7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 7 -7) (end 6 -7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 6 7) (end 7 7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 7 -7) (end 7 -6) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    
+    
     (fp_line (start -8.75 -8.25) (end 8.75 -8.25) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
     (fp_line (start 8.75 -8.25) (end 8.75 8.25) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
     (fp_line (start 8.75 8.25) (end -8.75 8.25) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
@@ -173,12 +183,17 @@
     
     (pad "" thru_hole circle (at -5.00 5.15 0) (size 1.9 1.9) (drill 1.6) (layers "*.Cu" "*.Mask") (net 2 "middle_home"))
     
-    (pad "" thru_hole circle (at 5.00 -5.15 0) (size 1.9 1.9) (drill 1.6) (layers "*.Cu" "*.Mask") (net 1 "C3"))
+    (pad "" thru_hole circle (at 5.00 -5.15 0) (size 1.9 1.9) (drill 1.6) (layers "*.Cu" "*.Mask") (net 2 "middle_home"))
+    
+    
+    (pad "" thru_hole circle (at 5.00 5.15 0) (size 1.9 1.9) (drill 1.6) (layers "*.Cu" "*.Mask") (net 2 "middle_home"))
+    
+    (pad "" thru_hole circle (at -5.00 -5.15 0) (size 1.9 1.9) (drill 1.6) (layers "*.Cu" "*.Mask") (net 1 "C3"))
     
     
     
     
-    (pad "" np_thru_hole circle (at 0 -5.95 0) (size 3 3) (drill 3) (layers "*.Cu" "*.Mask"))
+    (pad "" thru_hole circle (at 0 -5.95 0) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") )
     
     
     
@@ -201,20 +216,53 @@
     
     
     
-    (pad "" np_thru_hole circle (at -5 -3.75 195) (size 3 3) (drill 3) (layers "*.Cu" "*.Mask"))
+    
+    (pad "1" thru_hole circle (at -5 -3.75 195) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (net 1 "C3"))
+    
+    
+    (pad "2" smd roundrect (at 3.245 -5.95 0) (size 2.65 2.15) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1) (net 2 "middle_home"))
+    (pad "1" smd roundrect (at -7.6475 -3.75 0) (size 3.8 2.15) (layers "F.Cu") (roundrect_rratio 0.1) (net 1 "C3"))
+    (pad "" smd roundrect (at -8.2475 -3.75 0) (size 2.6 2.15) (layers "F.Paste" "F.Mask") (roundrect_rratio 0.1) (net 1 "C3"))
+    
+    
+    
+    
+    
+    
+    (fp_line (start -1.5 -8.2) (end -2 -7.7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 1.5 -8.2) (end -1.5 -8.2) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 2 -7.7) (end 1.5 -8.2) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 2 -7.7) (end 2 -6.78) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 2.52 -6.2) (end 7 -6.2) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 7 -6.2) (end 7 -5.6) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_arc (start 2.52 -6.2) (mid 2.139878 -6.382304) (end 2 -6.78) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+  
+    
+    (fp_line (start -1.5 -3.7) (end -2 -4.2) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 0.8 -3.7) (end -1.5 -3.7) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 2.5 -1.5) (end 2.5 -2.2) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 7 -1.5) (end 2.5 -1.5) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_line (start 7 -2) (end 7 -1.5) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
+    (fp_arc (start 0.8 -3.7) (mid 1.956518 -3.312082) (end 2.5 -2.22) (layer "B.SilkS") (stroke (width 0.15) (type solid)))
 
     
     
-    (pad "1" smd rect (at 3.275 -5.95 0) (size 2.6 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (net 1 "C3"))
+      
+      (pad "2" thru_hole circle (at 5 -3.75 195) (size 3.3 3.3) (drill 3) (layers "*.Cu" "*.Mask") (net 2 "middle_home"))
+      
+      
+    (pad "1" smd roundrect (at -3.245 -5.95 0) (size 2.65 2.15) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1) (net 1 "C3"))
+    (pad "2" smd roundrect (at 7.6475 -3.75 0) (size 3.8 2.15) (layers "B.Cu") (roundrect_rratio 0.1) (net 2 "middle_home"))
+    (pad "" smd roundrect (at 8.2475 -3.75 0) (size 2.6 2.15) (layers "B.Paste" "B.Mask") (roundrect_rratio 0.1) (net 2 "middle_home"))
     
-
-    
-    (pad "2" smd rect (at -8.275 -3.75 0) (size 2.6 2.6) (layers "F.Cu" "F.Paste" "F.Mask") (net 2 "middle_home"))
+      
     
     
     (pad "2" thru_hole circle (at 0 5.9 195) (size 2.032 2.032) (drill 1.27) (layers "*.Cu" "*.Mask") (net 1 "C3"))
     
     (pad "1" thru_hole circle (at 5 3.8 195) (size 2.032 2.032) (drill 1.27) (layers "*.Cu" "*.Mask") (net 2 "middle_home"))
+    
+    (pad "1" thru_hole circle (at -5 3.8 195) (size 2.032 2.032) (drill 1.27) (layers "*.Cu" "*.Mask") (net 2 "middle_home"))
     
   )
     

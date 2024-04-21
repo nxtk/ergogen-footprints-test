@@ -120,7 +120,6 @@
 //  - Add opposite stabilizer\boss holes when (choc_v2_support & solder & hotswap) options enabled together
 //  - Change v2 stabilizer\boss holes to plated
 
-
 module.exports = {
   params: {
     designator: 'S',
@@ -163,7 +162,7 @@ module.exports = {
         (at 0 0 ${p.r})
         (layer "${p.side}.SilkS")
         ${p.ref_hide}
-        (effects (font (size 1.27 1.27) (thickness 0.15)))
+        (effects (font (size 1 1) (thickness 0.15)))
       )
       (attr exclude_from_pos_files exclude_from_bom)
 

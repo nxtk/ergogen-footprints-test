@@ -66,12 +66,9 @@ pcbs:
 
           solder: true
           hotswap: true
-          side: "F"
-          #side: "B"
-          reversible: false
-          #reversible: false
-          plated: false
-          #plated: false
+          side: 'B' # 'F'
+          reversible: true
+          plated: true
           choc_v1_stabilizers_diameter: 1.9 # 1.75
           #CENTERHOLE: GND
           #LEFTSTAB: "" # { type: 'net', value: 'D2' }

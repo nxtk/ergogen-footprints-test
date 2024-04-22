@@ -63,17 +63,18 @@ pcbs:
           choc_v2_support: true
           include_stabilizer_pad: true
           oval_stabilizer_pad: false
+          enable_stabilizer_nets: true
 
           solder: true
           hotswap: true
-          side: 'B' # 'F'
-          reversible: true
-          plated: true
+          side: 'F' # 'F'
+          reversible: false
+          plated: false
           choc_v1_stabilizers_diameter: 1.9 # 1.75
           #CENTERHOLE: GND
-          #LEFTSTAB: "" # { type: 'net', value: 'D2' }
-          #RIGHTSTAB: "" # { type: 'net', value: 'D1' }
+          #LEFTSTAB: "" # { type: 'net', value: 'D1' }
+          #RIGHTSTAB: "" # { type: 'net', value: 'D2' }
 
         adjust:
-          rotate: 0
+          rotate: 90
 
